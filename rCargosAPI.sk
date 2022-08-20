@@ -228,17 +228,27 @@ sub "default.groups":
 	invoke "id.config"
 sub "id.config":
 	set {_p} to parameter 1
-	add "1" from {id.default.groups::*}
-	add "2" from {id.default.groups::*}
-	add "3" from {id.default.groups::*}
-	add "4" from {id.default.groups::*}
-	add "5" from {id.default.groups::*}
-	add "6" from {id.default.groups::*}
-	add "7" from {id.default.groups::*}
-	add "8" from {id.default.groups::*}
-	add "9" from {id.default.groups::*}
-		loop {id.default.groups::*}:
-			add "%loop-value%" to {id.criar.groups.loop-value%}
+	add "1" to {id.default.groups::*}
+	add "2" to {id.default.groups::*}
+	add "3" to {id.default.groups::*}
+	add "4" to {id.default.groups::*}
+	add "5" to {id.default.groups::*}
+	add "6" to {id.default.groups::*}
+	add "7" to {id.default.groups::*}
+	add "8" to {id.default.groups::*}
+	add "9" to {id.default.groups::*}
+	add "1" to {id.list.default.groups::*}
+	add "2" to {id.list.default.groups::*}
+	add "3" to {id.list.default.groups::*}
+	add "4" to {id.list.default.groups::*}
+	add "5" to {id.list.default.groups::*}
+	add "6" to {id.list.default.groups::*}
+	add "7" to {id.list.default.groups::*}
+	add "8" to {id.list.default.groups::*}
+	add "9" to {id.list.default.groups::*}
+	loop {id.default.groups::*}:
+		loop {id.list.default.groups::*}:
+			add "%loop-value-1%" to {id.criar.groups.%loop-value-2%}
 	stop
 sub "default.groups.cmd":
 	set {_p} to parameter 1
