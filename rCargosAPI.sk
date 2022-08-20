@@ -1,0 +1,621 @@
+sub "permissions.kcore":
+	set {_p} to parameter 1
+	send "" to {_p}
+	send "&a&l• &8Editando cargo: &2%{group.config.%{_p}%}%" to {_p}
+	send "" to {_p}
+	send json "&f- &akcore.cmd.fake" run "/hfiuawhbf kcore fake" to {_p}
+	send json "&f- &akcore.cmd.faker" run "/hfiuawhbf kcore faker" to {_p}
+	send json "&f- &akcore.admin" run "/hfiuawhbf kcore admin" to {_p}
+	send json "&f- &akcore.fly" run "/hfiuawhbf kcore fly" to {_p}
+	send json "&f- &akcore.fly" run "/hfiuawhbf kcore fly" to {_p}
+	send "" to {_p}
+	send json "&f- &aTodas as permissões" run "/hfiuawhbf kcore all" to {_p}
+	send "" to {_p}
+	send json "&a&l• &2&lPaginas: &e&l1 " then "&a&l2 " run "/hfiuawhbf pagina kcore 2" then "&a&l3 " run "/hfiuawhbf pagina kcore 3" then "&a&l4 " run "/hfiuawhbf pagina kcore 4" then "&a&l5 " run "/hfiuawhbf pagina kcore 5" then "&a&l6 " run "/hfiuawhbf pagina kcore 6" then "&a&l7 " run "/hfiuawhbf pagina kcore 7" to {_p}
+	send "" to {_p}
+	stop
+sub "permissions.kcore.2":
+	set {_p} to parameter 1
+	send "" to {_p}
+	send "&a&l• &8Editando cargo: &2%{group.config.%{_p}%}%" to {_p}
+	send "" to {_p}
+	send json "&f- &akcosmetics.cosmetics.gadget" run "/hfiuawhbf kcore fake" to {_p}
+	send json "&f- &akcosmetics.cosmetics.clothes" run "/hfiuawhbf kcore faker" to {_p}
+	send json "&f- &akcosmetics.cosmetics.pet" run "/hfiuawhbf kcore admin" to {_p}
+	send json "&f- &akcosmetics.cosmetics.balloon" run "/hfiuawhbf kcore fly" to {_p}
+	send json "&f- &akcosmetics.cosmetics.animated_hat" run "/hfiuawhbf kcore fly" to {_p}
+	send json "&f- &akcosmetics.cosmetics.hat" run "/hfiuawhbf kcore fly" to {_p}
+	send json "&f- &akcosmetics.cosmetics.companion" run "/hfiuawhbf kcore fly" to {_p}
+	send json "&f- &akcosmetics.cmd.mcs" run "/hfiuawhbf kcore fly" to {_p}
+	send "" to {_p}
+	send json "&f- &aTodas as permissões" run "/hfiuawhbf kcore all" to {_p}
+	send "" to {_p}
+	send json "&a&l• &2&lPaginas: " then "&a&l1 " run "/hfiuawhbf pagina kcore 1" then "&e&l2 " then "&a&l3 " run "/hfiuawhbf pagina kcore 3" then "&a&l4 " run "/hfiuawhbf pagina kcore 4" then "&a&l5 " run "/hfiuawhbf pagina kcore 5" then "&a&l6 " run "/hfiuawhbf pagina kcore 6" then "&a&l7 " run "/hfiuawhbf pagina kcore 7" to {_p}
+	send "" to {_p}
+	stop
+sub "permissions.kcore.3":
+	set {_p} to parameter 1
+	send "" to {_p}
+	send "&a&l• &8Editando cargo: &2%{group.config.%{_p}%}%" to {_p}
+	send "" to {_p}
+	send json "&f- &aklobby.cmd.lobby" run "/hfiuawhbf kcore fake" to {_p}
+	send json "&f- &aklobby.chat.color" run "/hfiuawhbf kcore faker" to {_p}
+	send json "&f- &aklobby.chat.delay" run "/hfiuawhbf kcore admin" to {_p}
+	send "" to {_p}
+	send json "&f- &aTodas as permissões" run "/hfiuawhbf kcore all" to {_p}
+	send "" to {_p}
+	send json "&a&l• &2&lPaginas: " then "&a&l1 " run "/hfiuawhbf pagina kcore 1" then "&a&l2 " run "/hfiuawhbf pagina kcore 2" then "&e&l3 " then "&a&l4 " run "/hfiuawhbf pagina kcore 4" then "&a&l5 " run "/hfiuawhbf pagina kcore 5" then "&a&l6 " run "/hfiuawhbf pagina kcore 6" then "&a&l7 " run "/hfiuawhbf pagina kcore 7" to {_p}
+	send "" to {_p}
+	stop
+sub "permissions.kcore.4":
+	set {_p} to parameter 1
+	send "" to {_p}
+	send "&a&l• &8Editando cargo: &2%{group.config.%{_p}%}%" to {_p}
+	send "" to {_p}
+	send json "&f- &akskywars.cmd.spectate" run "/hfiuawhbf kcore fake" to {_p}
+	send json "&f- &akskywars.cmd.skywars" run "/hfiuawhbf kcore faker" to {_p}
+	send json "&f- &akskywars.chat.color" run "/hfiuawhbf kcore admin" to {_p}
+	send json "&f- &akskywars.chat.delay" run "/hfiuawhbf kcore admin" to {_p}
+	send json "&f- &akskywars.menu.selector" run "/hfiuawhbf kcore admin" to {_p}
+	send "" to {_p}
+	send json "&f- &aTodas as permissões" run "/hfiuawhbf kcore all" to {_p}
+	send "" to {_p}
+	send json "&a&l• &2&lPaginas: " then "&a&l1 " run "/hfiuawhbf pagina kcore 1" then "&a&l2 " run "/hfiuawhbf pagina kcore 2" then "&a&l3 " run "/hfiuawhbf pagina kcore 3" then "&e&l4 " then "&a&l5 " run "/hfiuawhbf pagina kcore 5" then "&a&l6 " run "/hfiuawhbf pagina kcore 6" then "&a&l7 " run "/hfiuawhbf pagina kcore 7" to {_p}
+	send "" to {_p}
+	stop
+sub "permissions.kcore.5":
+	set {_p} to parameter 1
+	send "" to {_p}
+	send "&a&l• &8Editando cargo: &2%{group.config.%{_p}%}%" to {_p}
+	send "" to {_p}
+	send json "&f- &akthebridge.cmd.thebridge" run "/hfiuawhbf kcore fake" to {_p}
+	send json "&f- &akthebridge.cmd.spectate" run "/hfiuawhbf kcore faker" to {_p}
+	send json "&f- &akthebridge.chat.color" run "/hfiuawhbf kcore admin" to {_p}
+	send json "&f- &akthebridge.chat.delay" run "/hfiuawhbf kcore admin" to {_p}
+	send json "&f- &akthebridge.menu.selector" run "/hfiuawhbf kcore admin" to {_p}
+	send "" to {_p}
+	send json "&f- &aTodas as permissões" run "/hfiuawhbf kcore all" to {_p}
+	send "" to {_p}
+	send json "&a&l• &2&lPaginas: " then "&a&l1 " run "/hfiuawhbf pagina kcore 1" then "&a&l2 " run "/hfiuawhbf pagina kcore 2" then "&a&l3 " run "/hfiuawhbf pagina kcore 3" then "&a&l4 " run "/hfiuawhbf pagina kcore 4" then "&e&l5 " then "&a&l6 " run "/hfiuawhbf pagina kcore 6" then "&a&l7 " run "/hfiuawhbf pagina kcore 7" to {_p}
+	send "" to {_p}
+	stop
+sub "permissions.kcore.6":
+	set {_p} to parameter 1
+	send "" to {_p}
+	send "&a&l• &8Editando cargo: &2%{group.config.%{_p}%}%" to {_p}
+	send "" to {_p}
+	send json "&f- &akbedwars.cmd.join" run "/hfiuawhbf kcore fake" to {_p}
+	send json "&f- &akbedwars.cmd.bedwars" run "/hfiuawhbf kcore faker" to {_p}
+	send json "&f- &akbedwars.cmd.spectate" run "/hfiuawhbf kcore admin" to {_p}
+	send "" to {_p}
+	send json "&f- &aTodas as permissões" run "/hfiuawhbf kcore all" to {_p}
+	send "" to {_p}
+	send json "&a&l• &2&lPaginas: " then "&a&l1 " run "/hfiuawhbf pagina kcore 1" then "&a&l2 " run "/hfiuawhbf pagina kcore 2" then "&a&l3 " run "/hfiuawhbf pagina kcore 3" then "&a&l4 " run "/hfiuawhbf pagina kcore 4" then "&a&l5 " run "/hfiuawhbf pagina kcore 5" then "&e&l6 " then "&a&l7 " run "/hfiuawhbf pagina kcore 7" to {_p}
+	send "" to {_p}
+	stop
+sub "permissions.kcore.7":
+	set {_p} to parameter 1
+	send "" to {_p}
+	send "&a&l• &8Editando cargo: &2%{group.config.%{_p}%}%" to {_p}
+	send "" to {_p}
+	send json "&f- &akmysterybox.cmd.mysteryboxes" run "/hfiuawhbf kcore fake" to {_p}
+	send json "&f- &akmysterybox.open.multiplesboxes" run "/hfiuawhbf kcore faker" to {_p}
+	send "" to {_p}
+	send json "&f- &aTodas as permissões" run "/hfiuawhbf kcore all" to {_p}
+	send "" to {_p}
+	send json "&a&l• &2&lPaginas: " then "&a&l1 " run "/hfiuawhbf pagina kcore 1" then "&a&l2 " run "/hfiuawhbf pagina kcore 2" then "&a&l3 " run "/hfiuawhbf pagina kcore 3" then "&a&l4 " run "/hfiuawhbf pagina kcore 4" then "&a&l5 " run "/hfiuawhbf pagina kcore 5" then "&a&l6 " run "/hfiuawhbf pagina kcore 6" then "&e&l7" to {_p}
+	send "" to {_p}
+	stop
+sub "permissions.mcore":
+	set {_p} to parameter 1
+	send "" to {_p}
+	send "&a&l• &8Editando cargo: &2%{group.config.%{_p}%}%" to {_p}
+	send "" to {_p}
+	send json "&f- &amcore.cmd.fame" run "/hfiuawhbf mcore fame" to {_p}
+	send json "&f- &amcore.cmd.famer" run "/hfiuawhbf mcore famer" to {_p}
+	send json "&f- &amcore.admin" run "/hfiuawhbf mcore admin" to {_p}
+	send json "&f- &amcore.fly" run "/hfiuawhbf mcore fly" to {_p}
+	send json "&f- &amcore.fly" run "/hfiuawhbf mcore fly" to {_p}
+	send "" to {_p}
+	send json "&f- &aTodas as permissões" run "/hfiuawhbf mcore all" to {_p}
+	send "" to {_p}
+	send json "&a&l• &2&lPaginas: &e&l1 " then "&a&l2 " run "/hfiuawhbf pagina mcore 2" then "&a&l3 " run "/hfiuawhbf pagina mcore 3" then "&a&l4 " run "/hfiuawhbf pagina mcore 4" then "&a&l5 " run "/hfiuawhbf pagina mcore 5" then "&a&l6 " run "/hfiuawhbf pagina mcore 6" then "&a&l7 " run "/hfiuawhbf pagina mcore 7" to {_p}
+	send "" to {_p}
+	stop
+sub "permissions.mcore.2":
+	set {_p} to parameter 1
+	send "" to {_p}
+	send "&a&l• &8Editando cargo: &2%{group.config.%{_p}%}%" to {_p}
+	send "" to {_p}
+	send json "&f- &amcosmetics.cosmetics.gadget" run "/hfiuawhbf mcore fame" to {_p}
+	send json "&f- &amcosmetics.cosmetics.clothes" run "/hfiuawhbf mcore famer" to {_p}
+	send json "&f- &amcosmetics.cosmetics.pet" run "/hfiuawhbf mcore admin" to {_p}
+	send json "&f- &amcosmetics.cosmetics.balloon" run "/hfiuawhbf mcore fly" to {_p}
+	send json "&f- &amcosmetics.cosmetics.animated_hat" run "/hfiuawhbf mcore fly" to {_p}
+	send json "&f- &amcosmetics.cosmetics.hat" run "/hfiuawhbf mcore fly" to {_p}
+	send json "&f- &amcosmetics.cosmetics.companion" run "/hfiuawhbf mcore fly" to {_p}
+	send json "&f- &amcosmetics.cmd.mcs" run "/hfiuawhbf mcore fly" to {_p}
+	send "" to {_p}
+	send json "&f- &aTodas as permissões" run "/hfiuawhbf mcore all" to {_p}
+	send "" to {_p}
+	send json "&a&l• &2&lPaginas: " then "&a&l1 " run "/hfiuawhbf pagina mcore 1" then "&e&l2 " then "&a&l3 " run "/hfiuawhbf pagina mcore 3" then "&a&l4 " run "/hfiuawhbf pagina mcore 4" then "&a&l5 " run "/hfiuawhbf pagina mcore 5" then "&a&l6 " run "/hfiuawhbf pagina mcore 6" then "&a&l7 " run "/hfiuawhbf pagina mcore 7" to {_p}
+	send "" to {_p}
+	stop
+sub "permissions.mcore.3":
+	set {_p} to parameter 1
+	send "" to {_p}
+	send "&a&l• &8Editando cargo: &2%{group.config.%{_p}%}%" to {_p}
+	send "" to {_p}
+	send json "&f- &amlobby.cmd.lobby" run "/hfiuawhbf mcore fame" to {_p}
+	send json "&f- &amlobby.chat.color" run "/hfiuawhbf mcore famer" to {_p}
+	send json "&f- &amlobby.chat.delay" run "/hfiuawhbf mcore admin" to {_p}
+	send "" to {_p}
+	send json "&f- &aTodas as permissões" run "/hfiuawhbf mcore all" to {_p}
+	send "" to {_p}
+	send json "&a&l• &2&lPaginas: " then "&a&l1 " run "/hfiuawhbf pagina mcore 1" then "&a&l2 " run "/hfiuawhbf pagina mcore 2" then "&e&l3 " then "&a&l4 " run "/hfiuawhbf pagina mcore 4" then "&a&l5 " run "/hfiuawhbf pagina mcore 5" then "&a&l6 " run "/hfiuawhbf pagina mcore 6" then "&a&l7 " run "/hfiuawhbf pagina mcore 7" to {_p}
+	send "" to {_p}
+	stop
+sub "permissions.mcore.4":
+	set {_p} to parameter 1
+	send "" to {_p}
+	send "&a&l• &8Editando cargo: &2%{group.config.%{_p}%}%" to {_p}
+	send "" to {_p}
+	send json "&f- &amsmywars.cmd.spectate" run "/hfiuawhbf mcore fame" to {_p}
+	send json "&f- &amsmywars.cmd.smywars" run "/hfiuawhbf mcore famer" to {_p}
+	send json "&f- &amsmywars.chat.color" run "/hfiuawhbf mcore admin" to {_p}
+	send json "&f- &amsmywars.chat.delay" run "/hfiuawhbf mcore admin" to {_p}
+	send json "&f- &amsmywars.menu.selector" run "/hfiuawhbf mcore admin" to {_p}
+	send "" to {_p}
+	send json "&f- &aTodas as permissões" run "/hfiuawhbf mcore all" to {_p}
+	send "" to {_p}
+	send json "&a&l• &2&lPaginas: " then "&a&l1 " run "/hfiuawhbf pagina mcore 1" then "&a&l2 " run "/hfiuawhbf pagina mcore 2" then "&a&l3 " run "/hfiuawhbf pagina mcore 3" then "&e&l4 " then "&a&l5 " run "/hfiuawhbf pagina mcore 5" then "&a&l6 " run "/hfiuawhbf pagina mcore 6" then "&a&l7 " run "/hfiuawhbf pagina mcore 7" to {_p}
+	send "" to {_p}
+	stop
+sub "permissions.mcore.5":
+	set {_p} to parameter 1
+	send "" to {_p}
+	send "&a&l• &8Editando cargo: &2%{group.config.%{_p}%}%" to {_p}
+	send "" to {_p}
+	send json "&f- &amthebridge.cmd.thebridge" run "/hfiuawhbf mcore fame" to {_p}
+	send json "&f- &amthebridge.cmd.spectate" run "/hfiuawhbf mcore famer" to {_p}
+	send json "&f- &amthebridge.chat.color" run "/hfiuawhbf mcore admin" to {_p}
+	send json "&f- &amthebridge.chat.delay" run "/hfiuawhbf mcore admin" to {_p}
+	send json "&f- &amthebridge.menu.selector" run "/hfiuawhbf mcore admin" to {_p}
+	send "" to {_p}
+	send json "&f- &aTodas as permissões" run "/hfiuawhbf mcore all" to {_p}
+	send "" to {_p}
+	send json "&a&l• &2&lPaginas: " then "&a&l1 " run "/hfiuawhbf pagina mcore 1" then "&a&l2 " run "/hfiuawhbf pagina mcore 2" then "&a&l3 " run "/hfiuawhbf pagina mcore 3" then "&a&l4 " run "/hfiuawhbf pagina mcore 4" then "&e&l5 " then "&a&l6 " run "/hfiuawhbf pagina mcore 6" then "&a&l7 " run "/hfiuawhbf pagina mcore 7" to {_p}
+	send "" to {_p}
+	stop
+sub "permissions.mcore.6":
+	set {_p} to parameter 1
+	send "" to {_p}
+	send "&a&l• &8Editando cargo: &2%{group.config.%{_p}%}%" to {_p}
+	send "" to {_p}
+	send json "&f- &ambedwars.cmd.join" run "/hfiuawhbf mcore fame" to {_p}
+	send json "&f- &ambedwars.cmd.bedwars" run "/hfiuawhbf mcore famer" to {_p}
+	send json "&f- &ambedwars.cmd.spectate" run "/hfiuawhbf mcore admin" to {_p}
+	send "" to {_p}
+	send json "&f- &aTodas as permissões" run "/hfiuawhbf mcore all" to {_p}
+	send "" to {_p}
+	send json "&a&l• &2&lPaginas: " then "&a&l1 " run "/hfiuawhbf pagina mcore 1" then "&a&l2 " run "/hfiuawhbf pagina mcore 2" then "&a&l3 " run "/hfiuawhbf pagina mcore 3" then "&a&l4 " run "/hfiuawhbf pagina mcore 4" then "&a&l5 " run "/hfiuawhbf pagina mcore 5" then "&e&l6 " then "&a&l7 " run "/hfiuawhbf pagina mcore 7" to {_p}
+	send "" to {_p}
+	stop
+sub "permissions.mcore.7":
+	set {_p} to parameter 1
+	send "" to {_p}
+	send "&a&l• &8Editando cargo: &2%{group.config.%{_p}%}%" to {_p}
+	send "" to {_p}
+	send json "&f- &ammysterybox.cmd.mysteryboxes" run "/hfiuawhbf mcore fame" to {_p}
+	send json "&f- &ammysterybox.open.multiplesboxes" run "/hfiuawhbf mcore famer" to {_p}
+	send "" to {_p}
+	send json "&f- &aTodas as permissões" run "/hfiuawhbf mcore all" to {_p}
+	send "" to {_p}
+	send json "&a&l• &2&lPaginas: " then "&a&l1 " run "/hfiuawhbf pagina mcore 1" then "&a&l2 " run "/hfiuawhbf pagina mcore 2" then "&a&l3 " run "/hfiuawhbf pagina mcore 3" then "&a&l4 " run "/hfiuawhbf pagina mcore 4" then "&a&l5 " run "/hfiuawhbf pagina mcore 5" then "&a&l6 " run "/hfiuawhbf pagina mcore 6" then "&e&l7 " to {_p}
+	send "" to {_p}
+	stop
+sub "default.groups":
+	set {_p} to parameter 1
+	add "master" to {groups.all::*}
+	add "gerente" to {groups.all::*}
+	add "admin" to {groups.all::*}
+	add "moderador" to {groups.all::*}
+	add "ajudante" to {groups.all::*}
+	add "mvpplus" to {groups.all::*}
+	add "mvp" to {groups.all::*}
+	add "vipplus" to {groups.all::*}
+	add "vip" to {groups.all::*}
+	invoke "id.config"
+sub "id.config":
+	set {_p} to parameter 1
+	add "1" from {id.default.groups::*}
+	add "2" from {id.default.groups::*}
+	add "3" from {id.default.groups::*}
+	add "4" from {id.default.groups::*}
+	add "5" from {id.default.groups::*}
+	add "6" from {id.default.groups::*}
+	add "7" from {id.default.groups::*}
+	add "8" from {id.default.groups::*}
+	add "9" from {id.default.groups::*}
+		loop {id.default.groups::*}:
+			add "%loop-value%" to {id.criar.groups.loop-value%}
+	stop
+sub "default.groups.cmd":
+	set {_p} to parameter 1
+	make console execute "/lp creategroup master"
+	make console execute "/lp creategroup gerente"
+	make console execute "/lp creategroup admin"
+	make console execute "/lp creategroup moderador"
+	make console execute "/lp creategroup ajudante"
+	make console execute "/lp creategroup mvpplus"
+	make console execute "/lp creategroup mvp"
+	make console execute "/lp creategroup vipplus"
+	make console execute "/lp creategroup vip"
+	stop
+command /hfiuawhbf [<text>] [<text>] [<text>]:
+	trigger:
+		if arg 1 is "pagina":
+			if arg 2 is "kcore":
+				if arg 3 is "1":
+					invoke "permissions.kcore" from player
+					stop
+				if arg 3 is "2":
+					invoke "permissions.kcore.2" from player
+					stop
+				if arg 3 is "3":
+					invoke "permissions.kcore.3" from player
+					stop
+				if arg 3 is "4":
+					invoke "permissions.kcore.4" from player
+					stop
+				if arg 3 is "5":
+					invoke "permissions.kcore.5" from player
+					stop
+				if arg 3 is "6":
+					invoke "permissions.kcore.6" from player
+					stop
+				if arg 3 is "7":
+					invoke "permissions.kcore.7" from player
+					stop
+			if arg 2 is "mcore":
+				if arg 3 is "1":
+					invoke "permissions.mcore" from player
+					stop
+				if arg 3 is "2":
+					invoke "permissions.mcore.2" from player
+					stop
+				if arg 3 is "3":
+					invoke "permissions.mcore.3" from player
+					stop
+				if arg 3 is "4":
+					invoke "permissions.mcore.4" from player
+					stop
+				if arg 3 is "5":
+					invoke "permissions.mcore.5" from player
+					stop
+				if arg 3 is "6":
+					invoke "permissions.mcore.6" from player
+					stop
+				if arg 3 is "7":
+					invoke "permissions.mcore.7" from player
+					stop
+		if arg 1 is "kcore":
+			if arg 2 is "fly":
+				make console execute command "/lp group %{group.config.%player%}% permission set kcore.cmd.fly"
+				send "&aVocê adicionou a permissão &2kcore.cmd.fly &acom sucesso!"
+				stop
+			if arg 2 is "fake":
+				make console execute command "/lp group %{group.config.%player%}% permission set kcore.cmd.fake"
+				send "&aVocê adicionou a permissão &2kcore.cmd.fake &acom sucesso!"
+				stop
+			if arg 2 is "faker":
+				make console execute command "/lp group %{group.config.%player%}% permission set kcore.cmd.faker"
+				send "&aVocê adicionou a permissão &2kcore.cmd.faker &acom sucesso!"
+				stop
+			if arg 2 is "admin":
+				make console execute command "/lp group %{group.config.%player%}% permission set kcore.cmd.admin"
+				send "&aVocê adicionou a permissão &2kcore.cmd.admin &acom sucesso!"
+				stop
+			if arg 2 is "gadget":
+				make console execute command "/lp group %{group.config.%player%}% permission set kcosmetics.cosmetics.gadget"
+				send "&aVocê adicionou a permissão &2kcosmetics.cosmetics.gadget &acom sucesso!"
+				stop
+			if arg 2 is "clothes":
+				make console execute command "/lp group %{group.config.%player%}% permission set kcosmetics.cosmetics.clothes"
+				send "&aVocê adicionou a permissão &2kcosmetics.cosmetics.clothes&acom sucesso!"
+				stop
+			if arg 2 is "pet":
+				make console execute command "/lp group %{group.config.%player%}% permission set kcosmetics.cosmetics.pet"
+				send "&aVocê adicionou a permissão &2kcosmetics.cosmetics.pet &acom sucesso!"
+				stop
+			if arg 2 is "balloon":
+				make console execute command "/lp group %{group.config.%player%}% permission set kcosmetics.cosmetics.balloon"
+				send "&aVocê adicionou a permissão &2kcosmetics.cosmetics.balloon &acom sucesso!"
+				stop
+			if arg 2 is "animated":
+				make console execute command "/lp group %{group.config.%player%}% permission set kcosmetics.cosmetics.animated_hat"
+				send "&aVocê adicionou a permissão &2kcosmetics.cosmetics.animated_hat &acom sucesso!"
+				stop
+			if arg 2 is "hat":
+				make console execute command "/lp group %{group.config.%player%}% permission set kcosmetics.cosmetics.hat"
+				send "&aVocê adicionou a permissão &2kcosmetics.cosmetics.hat &acom sucesso!"
+				stop
+			if arg 2 is "companion":
+				make console execute command "/lp group %{group.config.%player%}% permission set kcosmetics.cosmetics.companion"
+				send "&aVocê adicionou a permissão &2kcosmetics.cosmetics.companion &acom sucesso!"
+				stop
+			if arg 2 is "mcs":
+				make console execute command "/lp group %{group.config.%player%}% permission set kcosmetics.cmd.mcs"
+				send "&aVocê adicionou a permissão &2kcosmetics.cmd.mcs &acom sucesso!"
+				stop
+			if arg 2 is "lobby":
+				make console execute command "/lp group %{group.config.%player%}% permission set klobby.cmd.lobby"
+				send "&aVocê adicionou a permissão &2klobby.cmd.lobby&acom sucesso!"
+				stop
+			if arg 2 is "color":
+				make console execute command "/lp group %{group.config.%player%}% permission set klobby.chat.color"
+				send "&aVocê adicionou a permissão &2klobby.chat.color &acom sucesso!"
+				stop
+			if arg 2 is "delay":
+				make console execute command "/lp group %{group.config.%player%}% permission set klobby.chat.delay"
+				send "&aVocê adicionou a permissão &2klobby.chat.delay &acom sucesso!"
+				stop
+			if arg 2 is "SWspectate":
+				make console execute command "/lp group %{group.config.%player%}% permission set kskywars.cmd.spectate"
+				send "&aVocê adicionou a permissão &2kskywars.cmd.spectate &acom sucesso!"
+				stop
+			if arg 2 is "SWskywars":
+				make console execute command "/lp group %{group.config.%player%}% permission set kskywars.cmd.skywars"
+				send "&aVocê adicionou a permissão &2kskywars.cmd.skywars &acom sucesso!"
+				stop
+			if arg 2 is "SWcolor":
+				make console execute command "/lp group %{group.config.%player%}% permission set kskywars.chat.color"
+				send "&aVocê adicionou a permissão &2kskywars.chat.color &acom sucesso!"
+				stop
+			if arg 2 is "SWdelay":
+				make console execute command "/lp group %{group.config.%player%}% permission set kskywars.chat.delay"
+				send "&aVocê adicionou a permissão &2kskywars.chat.delay &acom sucesso!"
+				stop
+			if arg 2 is "SWselector":
+				make console execute command "/lp group %{group.config.%player%}% permission set kskywars.menu.selector"
+				send "&aVocê adicionou a permissão &2kskywars.menu.selector&acom sucesso!"
+				stop
+			if arg 2 is "TBthebridge":
+				make console execute command "/lp group %{group.config.%player%}% permission set kthebridge.cmd.thebridge"
+				send "&aVocê adicionou a permissão &2kthebridge.cmd.thebridge &acom sucesso!"
+				stop
+			if arg 2 is "TBspectate":
+				make console execute command "/lp group %{group.config.%player%}% permission set kthebridge.cmd.spectate"
+				send "&aVocê adicionou a permissão &2kthebridge.cmd.spectate &acom sucesso!"
+				stop
+			if arg 2 is "TBcolor":
+				make console execute command "/lp group %{group.config.%player%}% permission set kthebridge.chat.color"
+				send "&aVocê adicionou a permissão &2kthebridge.chat.color &acom sucesso!"
+				stop
+			if arg 2 is "TBdelay":
+				make console execute command "/lp group %{group.config.%player%}% permission set kthebridge.chat.delay"
+				send "&aVocê adicionou a permissão &2kthebridge.chat.delay &acom sucesso!"
+				stop
+			if arg 2 is "TBselector":
+				make console execute command "/lp group %{group.config.%player%}% permission set kthebridge.menu.selector"
+				send "&aVocê adicionou a permissão &2kthebridge.menu.selector &acom sucesso!"
+				stop
+			if arg 2 is "BWjoin":
+				make console execute command "/lp group %{group.config.%player%}% permission set kbedwars.cmd.join"
+				send "&aVocê adicionou a permissão &2kbedwars.cmd.join &acom sucesso!"
+				stop
+			if arg 2 is "BWbedwars":
+				make console execute command "/lp group %{group.config.%player%}% permission set kbedwars.cmd.bedwars"
+				send "&aVocê adicionou a permissão &2kbedwars.cmd.bedwars &acom sucesso!"
+				stop
+			if arg 2 is "BWspectate":
+				make console execute command "/lp group %{group.config.%player%}% permission set kbedwars.cmd.spectate"
+				send "&aVocê adicionou a permissão &2kbedwars.cmd.spectate &acom sucesso!"
+				stop
+			if arg 2 is "mysteryboxes":
+				make console execute command "/lp group %{group.config.%player%}% permission set kmysterybox.cmd.mysteryboxes"
+				send "&aVocê adicionou a permissão &2kmysterybox.cmd.mysteryboxes&acom sucesso!"
+				stop
+			if arg 2 is "multiplesboxes":
+				make console execute command "/lp group %{group.config.%player%}% permission set kmysterybox.open.multiplesboxes"
+				send "&aVocê adicionou a permissão &2kmysterybox.open.multiplesboxes &acom sucesso!"
+				stop
+			if arg 2 is "all":
+				invoke "kcore.permissions.all" from player
+				send "&aTodas as permissões do kcore foram adicionadas com sucesso!"
+				stop
+		if arg 1 is "mcore":
+			if arg 2 is "fly":
+				make console execute command "/lp group %{group.config.%player%}% permission set mcore.cmd.fly"
+				send "&aVocê adicionou a permissão &2mcore.cmd.fly &acom sucesso!"
+				stop
+			if arg 2 is "fame":
+				make console execute command "/lp group %{group.config.%player%}% permission set mcore.cmd.fame"
+				send "&aVocê adicionou a permissão &2mcore.cmd.fame &acom sucesso!"
+				stop
+			if arg 2 is "famer":
+				make console execute command "/lp group %{group.config.%player%}% permission set mcore.cmd.famer"
+				send "&aVocê adicionou a permissão &2mcore.cmd.famer &acom sucesso!"
+				stop
+			if arg 2 is "admin":
+				make console execute command "/lp group %{group.config.%player%}% permission set mcore.cmd.admin"
+				send "&aVocê adicionou a permissão &2mcore.cmd.admin &acom sucesso!"
+				stop
+			if arg 2 is "gadget":
+				make console execute command "/lp group %{group.config.%player%}% permission set mcosmetics.cosmetics.gadget"
+				send "&aVocê adicionou a permissão &2mcosmetics.cosmetics.gadget &acom sucesso!"
+				stop
+			if arg 2 is "clothes":
+				make console execute command "/lp group %{group.config.%player%}% permission set mcosmetics.cosmetics.clothes"
+				send "&aVocê adicionou a permissão &2mcosmetics.cosmetics.clothes&acom sucesso!"
+				stop
+			if arg 2 is "pet":
+				make console execute command "/lp group %{group.config.%player%}% permission set mcosmetics.cosmetics.pet"
+				send "&aVocê adicionou a permissão &2mcosmetics.cosmetics.pet &acom sucesso!"
+				stop
+			if arg 2 is "balloon":
+				make console execute command "/lp group %{group.config.%player%}% permission set mcosmetics.cosmetics.balloon"
+				send "&aVocê adicionou a permissão &2mcosmetics.cosmetics.balloon &acom sucesso!"
+				stop
+			if arg 2 is "animated":
+				make console execute command "/lp group %{group.config.%player%}% permission set mcosmetics.cosmetics.animated_hat"
+				send "&aVocê adicionou a permissão &2mcosmetics.cosmetics.animated_hat &acom sucesso!"
+				stop
+			if arg 2 is "hat":
+				make console execute command "/lp group %{group.config.%player%}% permission set mcosmetics.cosmetics.hat"
+				send "&aVocê adicionou a permissão &2mcosmetics.cosmetics.hat &acom sucesso!"
+				stop
+			if arg 2 is "companion":
+				make console execute command "/lp group %{group.config.%player%}% permission set mcosmetics.cosmetics.companion"
+				send "&aVocê adicionou a permissão &2mcosmetics.cosmetics.companion &acom sucesso!"
+				stop
+			if arg 2 is "mcs":
+				make console execute command "/lp group %{group.config.%player%}% permission set mcosmetics.cmd.mcs"
+				send "&aVocê adicionou a permissão &2mcosmetics.cmd.mcs &acom sucesso!"
+				stop
+			if arg 2 is "lobby":
+				make console execute command "/lp group %{group.config.%player%}% permission set mlobby.cmd.lobby"
+				send "&aVocê adicionou a permissão &2mlobby.cmd.lobby&acom sucesso!"
+				stop
+			if arg 2 is "color":
+				make console execute command "/lp group %{group.config.%player%}% permission set mlobby.chat.color"
+				send "&aVocê adicionou a permissão &2mlobby.chat.color &acom sucesso!"
+				stop
+			if arg 2 is "delay":
+				make console execute command "/lp group %{group.config.%player%}% permission set mlobby.chat.delay"
+				send "&aVocê adicionou a permissão &2mlobby.chat.delay &acom sucesso!"
+				stop
+			if arg 2 is "SWspectate":
+				make console execute command "/lp group %{group.config.%player%}% permission set msmywars.cmd.spectate"
+				send "&aVocê adicionou a permissão &2msmywars.cmd.spectate &acom sucesso!"
+				stop
+			if arg 2 is "SWsmywars":
+				make console execute command "/lp group %{group.config.%player%}% permission set msmywars.cmd.smywars"
+				send "&aVocê adicionou a permissão &2msmywars.cmd.smywars &acom sucesso!"
+				stop
+			if arg 2 is "SWcolor":
+				make console execute command "/lp group %{group.config.%player%}% permission set msmywars.chat.color"
+				send "&aVocê adicionou a permissão &2msmywars.chat.color &acom sucesso!"
+				stop
+			if arg 2 is "SWdelay":
+				make console execute command "/lp group %{group.config.%player%}% permission set msmywars.chat.delay"
+				send "&aVocê adicionou a permissão &2msmywars.chat.delay &acom sucesso!"
+				stop
+			if arg 2 is "SWselector":
+				make console execute command "/lp group %{group.config.%player%}% permission set msmywars.menu.selector"
+				send "&aVocê adicionou a permissão &2msmywars.menu.selector&acom sucesso!"
+				stop
+			if arg 2 is "TBthebridge":
+				make console execute command "/lp group %{group.config.%player%}% permission set mthebridge.cmd.thebridge"
+				send "&aVocê adicionou a permissão &2mthebridge.cmd.thebridge &acom sucesso!"
+				stop
+			if arg 2 is "TBspectate":
+				make console execute command "/lp group %{group.config.%player%}% permission set mthebridge.cmd.spectate"
+				send "&aVocê adicionou a permissão &2mthebridge.cmd.spectate &acom sucesso!"
+				stop
+			if arg 2 is "TBcolor":
+				make console execute command "/lp group %{group.config.%player%}% permission set mthebridge.chat.color"
+				send "&aVocê adicionou a permissão &2mthebridge.chat.color &acom sucesso!"
+				stop
+			if arg 2 is "TBdelay":
+				make console execute command "/lp group %{group.config.%player%}% permission set mthebridge.chat.delay"
+				send "&aVocê adicionou a permissão &2mthebridge.chat.delay &acom sucesso!"
+				stop
+			if arg 2 is "TBselector":
+				make console execute command "/lp group %{group.config.%player%}% permission set mthebridge.menu.selector"
+				send "&aVocê adicionou a permissão &2mthebridge.menu.selector &acom sucesso!"
+				stop
+			if arg 2 is "BWjoin":
+				make console execute command "/lp group %{group.config.%player%}% permission set mbedwars.cmd.join"
+				send "&aVocê adicionou a permissão &2mbedwars.cmd.join &acom sucesso!"
+				stop
+			if arg 2 is "BWbedwars":
+				make console execute command "/lp group %{group.config.%player%}% permission set mbedwars.cmd.bedwars"
+				send "&aVocê adicionou a permissão &2mbedwars.cmd.bedwars &acom sucesso!"
+				stop
+			if arg 2 is "BWspectate":
+				make console execute command "/lp group %{group.config.%player%}% permission set mbedwars.cmd.spectate"
+				send "&aVocê adicionou a permissão &2mbedwars.cmd.spectate &acom sucesso!"
+				stop
+			if arg 2 is "mysteryboxes":
+				make console execute command "/lp group %{group.config.%player%}% permission set mmysterybox.cmd.mysteryboxes"
+				send "&aVocê adicionou a permissão &2mmysterybox.cmd.mysteryboxes&acom sucesso!"
+				stop
+			if arg 2 is "multiplesboxes":
+				make console execute command "/lp group %{group.config.%player%}% permission set mmysterybox.open.multiplesboxes"
+				send "&aVocê adicionou a permissão &2mmysterybox.open.multiplesboxes &acom sucesso!"
+				stop
+			if arg 2 is "all":
+				invoke "mcore.permissions.all" from player
+				send "&aTodas as permissões do mcore foram adicionadas com sucesso!"
+				stop
+sub "kcore.permissions.all":
+	set {_p} to parameter 1
+	add "kcore.cmd.fake" to {kcore.permissions::*}
+	add "kcore.cmd.faker" to {kcore.permissions::*}
+	add "kcore.cmd.fakel" to {kcore.permissions::*}
+	add "kcore.admin" to {kcore.permissions::*}
+	add "kcore.fly" to {kcore.permissions::*}
+	add "kcosmetics.cosmetics.gadget" to {kcore.permissions::*}
+	add "kcosmetics.cosmetics.clothes" to {kcore.permissions::*}
+	add "kcosmetics.cosmetics.pet" to {kcore.permissions::*}
+	add "kcosmetics.cosmetics.balloon" to {kcore.permissions::*}
+	add "kcosmetics.cosmetics.animated_hat" to {kcore.permissions::*}
+	add "kcosmetics.cosmetics.hat" to {kcore.permissions::*}
+	add "kcosmetics.cosmetics.companion" to {kcore.permissions::*}
+	add "kcosmetics.cmd.mcs" to {kcore.permissions::*}
+	add "klobby.cmd.lobby" to {kcore.permissions::*}
+	add "klobby.chat.color" to {kcore.permissions::*}
+	add "klobby.chat.delay" to {kcore.permissions::*}
+	add "kskywars.cmd.spectate" to {kcore.permissions::*}
+	add "kskywars.cmd.skywars" to {kcore.permissions::*}
+	add "kskywars.chat.color" to {kcore.permissions::*}
+	add "kskywars.chat.delay" to {kcore.permissions::*}
+	add "kskywars.menu.selector" to {kcore.permissions::*}
+	add "kthebridge.cmd.thebridge" to {kcore.permissions::*}
+	add "kthebridge.cmd.spectate" to {kcore.permissions::*}
+	add "kthebridge.chat.color" to {kcore.permissions::*}
+	add "kthebridge.chat.delay" to {kcore.permissions::*}
+	add "kthebridge.menu.selector" to {kcore.permissions::*}
+	add "kbedwars.cmd.join" to {kcore.permissions::*}
+	add "kbedwars.cmd.bedwars" to {kcore.permissions::*}
+	add "kbedwars.cmd.spectate" to {kcore.permissions::*}
+	add "kmysterybox.cmd.mysteryboxes" to {kcore.permissions::*}
+	add "kmysterybox.open.multiplesboxes" to {kcore.permissions::*}
+	loop {kcore.permissions::*}:
+		make console execute command "/lp group %{group.config.%{_p}%}% permission set %loop-value%"
+sub "mcore.permissions.all":
+	set {_p} to parameter 1
+	add "mcore.cmd.fame" to {mcore.permissions::*}
+	add "mcore.cmd.famer" to {mcore.permissions::*}
+	add "mcore.cmd.famel" to {mcore.permissions::*}
+	add "mcore.admin" to {mcore.permissions::*}
+	add "mcore.fly" to {mcore.permissions::*}
+	add "mcosmetics.cosmetics.gadget" to {mcore.permissions::*}
+	add "mcosmetics.cosmetics.clothes" to {mcore.permissions::*}
+	add "mcosmetics.cosmetics.pet" to {mcore.permissions::*}
+	add "mcosmetics.cosmetics.balloon" to {mcore.permissions::*}
+	add "mcosmetics.cosmetics.animated_hat" to {mcore.permissions::*}
+	add "mcosmetics.cosmetics.hat" to {mcore.permissions::*}
+	add "mcosmetics.cosmetics.companion" to {mcore.permissions::*}
+	add "mcosmetics.cmd.mcs" to {mcore.permissions::*}
+	add "mlobby.cmd.lobby" to {mcore.permissions::*}
+	add "mlobby.chat.color" to {mcore.permissions::*}
+	add "mlobby.chat.delay" to {mcore.permissions::*}
+	add "msmywars.cmd.spectate" to {mcore.permissions::*}
+	add "msmywars.cmd.smywars" to {mcore.permissions::*}
+	add "msmywars.chat.color" to {mcore.permissions::*}
+	add "msmywars.chat.delay" to {mcore.permissions::*}
+	add "msmywars.menu.selector" to {mcore.permissions::*}
+	add "mthebridge.cmd.thebridge" to {mcore.permissions::*}
+	add "mthebridge.cmd.spectate" to {mcore.permissions::*}
+	add "mthebridge.chat.color" to {mcore.permissions::*}
+	add "mthebridge.chat.delay" to {mcore.permissions::*}
+	add "mthebridge.menu.selector" to {mcore.permissions::*}
+	add "mbedwars.cmd.join" to {mcore.permissions::*}
+	add "mbedwars.cmd.bedwars" to {mcore.permissions::*}
+	add "mbedwars.cmd.spectate" to {mcore.permissions::*}
+	add "mmysterybox.cmd.mysteryboxes" to {mcore.permissions::*}
+	add "mmysterybox.open.multiplesboxes" to {mcore.permissions::*}
+	loop {mcore.permissions::*}:
+		make console execute command "/lp group %{group.config.%{_p}%}% permission set %loop-value%"
