@@ -7,7 +7,6 @@ sub "permissions.kcore":
 	send json "&f- &akcore.cmd.faker" run "/hfiuawhbf kcore faker" to {_p}
 	send json "&f- &akcore.admin" run "/hfiuawhbf kcore admin" to {_p}
 	send json "&f- &akcore.fly" run "/hfiuawhbf kcore fly" to {_p}
-	send json "&f- &akcore.fly" run "/hfiuawhbf kcore fly" to {_p}
 	send "" to {_p}
 	send json "&f- &aTodas as permissões" run "/hfiuawhbf kcore all" to {_p}
 	send "" to {_p}
@@ -225,8 +224,12 @@ sub "default.groups":
 	add "mvp" to {groups.all::*}
 	add "vipplus" to {groups.all::*}
 	add "vip" to {groups.all::*}
+	loop {groups.all::*}:
+		set {group.criar.%loop-value%} to "%{groups.all::*}%"
 	invoke "id.config"
 sub "id.config":
+	clear {id.list.default.groups::*}
+	clear {id.default.groups::*}
 	set {_p} to parameter 1
 	add "1" to {id.default.groups::*}
 	add "2" to {id.default.groups::*}
@@ -237,18 +240,18 @@ sub "id.config":
 	add "7" to {id.default.groups::*}
 	add "8" to {id.default.groups::*}
 	add "9" to {id.default.groups::*}
-	add "1" to {id.list.default.groups::*}
-	add "2" to {id.list.default.groups::*}
-	add "3" to {id.list.default.groups::*}
-	add "4" to {id.list.default.groups::*}
-	add "5" to {id.list.default.groups::*}
-	add "6" to {id.list.default.groups::*}
-	add "7" to {id.list.default.groups::*}
-	add "8" to {id.list.default.groups::*}
-	add "9" to {id.list.default.groups::*}
+	add "master" to {id.list.default.groups::*}
+	add "gerente" to {id.list.default.groups::*}
+	add "admin" to {id.list.default.groups::*}
+	add "moderador" to {id.list.default.groups::*}
+	add "ajudante" to {id.list.default.groups::*}
+	add "mvpplus" to {id.list.default.groups::*}
+	add "mvp" to {id.list.default.groups::*}
+	add "vipplus" to {id.list.default.groups::*}
+	add "vip" to {id.list.default.groups::*}
 	loop {id.default.groups::*}:
 		loop {id.list.default.groups::*}:
-			add "%loop-value-1%" to {id.criar.groups.%loop-value-2%}
+			set {id.criar.groups.%loop-value-1%} to "%loop-value-2%"
 	stop
 sub "default.groups.cmd":
 	set {_p} to parameter 1
