@@ -1,0 +1,198 @@
+# Sistema de criar cargo por comando
+# Os grupos vem automaticamente com as permissões
+
+options:
+
+# Configure automaticamente cargos e permissões basicas:
+	AutomaticConfig: false
+
+on load:
+	if {default.groups} is not set:
+		add "default" to {groups.all::*}
+		if "{@AutomaticConfig}" is "true":
+			invoke "Default.Groups"
+
+command /groups [<text>] [<text>] [<text>] [<text>]:
+	trigger:
+		if player has permission "groups.all":
+			if arg 1 is not set:
+				invoke "help.groups" from player
+				stop
+			if arg 1 is set:
+				if arg 1 is "criar":
+					if arg 2 is set:
+						if {group.criar.%arg 2%} is not set:
+							if arg 3 is set:
+								if arg 3 is "1" or "2" or "3" or "4" or "5" or "6" or "7" or "8" or "9" or "0":
+									if {id.criar.groups.%arg 3%} is not set:
+										set {group.criar.%arg 2%} to "%arg 2%"
+										set {id.criar.groups.%arg 2%} to "%arg 3%"
+										add arg 2 to {groups.all::*}
+										send "&cVocê adicionou um grupo com sucesso!"
+										stop
+									else:
+										send "&cErro! Já existe um grupo com esse id"
+										stop
+								else:
+									send "&cErro! use um numero valido."
+									stop
+							else:
+								send "&cSintexe incorreta! Use /groups criar [Grupo] [Id]"
+								stop
+						else:
+							send "&cJá existe esse cargo em nosso sistema."
+							stop
+					else:
+						send "&cErro! cite um grupo para ser adicionado em nosso sistema."
+						stop
+				if arg 1 is "delete":
+					if arg 2 is set:
+						if {group.criar.%arg 2%} is set:
+							if arg 3 is set:
+								if {id.criar.groups.%arg 3%} is set:
+									delete {group.criar.%arg 2%}
+									remove "%arg 2%" from {groups.all::*}
+									delete {id.criar.groups.%arg 3%}
+									send "&ccê removeu um grupo da lista de cargos"
+									stop
+								else:
+									send "Erro! não existe nenhum cargo com esse ID."
+									stop
+							else:
+								send "Erro! Cite um ID para ser deletado."
+								stop
+						else:
+							send "Erro! esse grupo não foi adicionado em nosso sistema."
+							stop
+					else:
+						send "Erro! cite um grupo para remover da lista."
+						stop
+				if arg 1 is "editar":
+					if arg 2 is "permission":
+						if arg 3 is set:
+							if arg 3 is "{group.criar.%arg 2%}":
+								if arg 4 is "mcore" or "kcore" or "default":
+									set {group.config.%player%} to "%arg 3%"
+									set {config.pacote.permissions.%player%} to "%arg 4%"
+									make console execute "COMANDO PARA CRIAR CARGO"
+									send "&aAbrindo configurações..."
+									wait 2 seconds
+									invoke "config.permissions.pacotes" from player
+									stop
+								else:
+									send "&cErro! Lista de permissões não encontrada."
+								stop
+							else:
+								send "&cErro! Você não citou um grupo valido."
+								stop
+						else:
+							send "&cErro! Você não citou nenhum grupo."
+							stop
+					else:
+						send "Erro! Comando invalido."
+						stop
+				if arg 1 is "list":
+					if amount of {groups.all::*} > 0:
+						send "&eForam encontrados: %amount of {groups.all::*}%"
+						loop {groups.all::*}:
+							send "&f- &7%loop-value%"
+					else:
+						send "&cNenhum cargo encontrado."
+						stop
+sub "help.groups":
+	set {_p} to parameter 1
+	send "" to {_p}
+	send "&eajuda 1/1" to {_p}
+	send "" to {_p}
+	send "&a/groups criar [Grupo] [Id]" to {_p}
+	send "/groups delete [Grupo] [Id]" to {_p}
+	send "/groups editar permission [Grupo] [Pacote]" to {_p}
+	send "/groups list" to {_p}
+	send "" to {_p}
+	stop
+sub "Default.Groups":
+	set {_p} to parameter 1
+	add "master" to {groups.all::*}
+	add "gerente" to {groups.all::*}
+	add "admin" to {groups.all::*}
+	add "moderador" to {groups.all::*}
+	add "ajudante" to {groups.all::*}
+	add "mvpplus" to {groups.all::*}
+	add "mvp" to {groups.all::*}
+	add "vipplus" to {groups.all::*}
+	add "vip" to {groups.all::*}
+	stop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# API
+sub "config.permissions.pacotes":
+	set {_p} to parameter 1
+	if {config.pacotes.permissions.%{_p}%} is "default":
+		invoke "permissions.default" from {_p}
+		stop
+	if {config.pacotes.permissions.%{_p}%} is "mcore":
+		invoke "permissions.mcore" from {_p}
+		stop
+	if {config.pacotes.permissions.%{_p}%} is "kcore":
+		invoke "permissions.kcore" from {_p}
+		stop
+	stop
+sub "permissions.kcore":
+	set {_p} to parameter 1
+	send "" to {_p}
+	send "&8Editando cargo: &2%{group.config.%{_p}%}%" to {_p}
+	send "" to {_p}
+	send json "&f- &akcore.cmd.fake" run "/hfiuawhbf kcore fake" to {_p}
+	send json "&f- &akcore.cmd.faker" run "/hfiuawhbf kcore faker" to {_p}
+	send json "&f- &akcore.admin" run "/hfiuawhbf kcore admin" to {_p}
+	send json "&f- &akcore.fly" run "/hfiuawhbf kcore fly" to {_p}
+	send json "&f- &akcore.fly" run "/hfiuawhbf kcore fly" to {_p}
+	send "" to {_p}
+	send json "&f- &aTodas as permissões" run "/hfiuawhbf kcore all" to {_p}
+	send "" to {_p}
+	send json "&aPaginas:" "1," run "/pagina2" "2," run "/pagina3" run "&73," to {_p}
+	send "" to {_p}
+	stop
+command /hfiuawhbf [<text>] [<text>]:
+	trigger:
+		if arg 1 is "kcore":
+			if arg 2 is "fly":
+				make console execute command "/lp group %{group.config.%player%}% permission set kcore.cmd.fly"
+				send "&aaVocê adicinou a permissão &2kcore.cmd.fly &acom sucesso!"
+				stop
+			if arg 2 is "fake":
+				make console execute command "/lp group %{group.config.%player%}% permission set kcore.cmd.fake"
+				send "&aaVocê adicinou a permissão &2kcore.cmd.fake &acom sucesso!"
+				stop
+			if arg 2 is "faker":
+				make console execute command "/lp group %{group.config.%player%}% permission set kcore.cmd.faker"
+				send "&aaVocê adicinou a permissão &2kcore.cmd.faker &acom sucesso!"
+				stop
+			if arg 2 is "admin":
+				make console execute command "/lp group %{group.config.%player%}% permission set kcore.cmd.admin"
+				send "&aaVocê adicinou a permissão &2kcore.cmd.admin &acom sucesso!"
+				stop
+			if arg 2 is "all":
+				make console execute command "/lp group %{group.config.%player%}% permission set kcore.cmd.fake"
+				make console execute command "/lp group %{group.config.%player%}% permission set kcore.cmd.faker"
+				make console execute command "/lp group %{group.config.%player%}% permission set kcore.cmd.admin"
+				make console execute command "/lp group %{group.config.%player%}% permission set kcore.cmd.fly"
+				send "&aTodas as permissões do kcore foram adicionadas com sucesso!"
+				stop
+
+	
