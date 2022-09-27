@@ -1,16 +1,30 @@
 # Sistema de criar cargo por comando
-# Os grupos vem automaticamente com as permissões
+# Sistema de adicionar permissões por chat
+# Lista de permissões
+
+#Em caso de problemas acesse: https://discord.gg/eehY3dH5XU
 
 options:
 
-# Configure automaticamente cargos e permissões basicas:
-	AutomaticConfig: false
+# Configure automaticamente os cargos:
+	AutomaticConfig: true
 
 on load:
 	if {default.groups} is not set:
 		add "default" to {groups.all::*}
-		if "{@AutomaticConfig}" is "true":
-			invoke "Default.Groups"
+		set {default.groups} to true
+	if "{@AutomaticConfig}" is "true":
+		if {automatic.config} is not set:
+			invoke "default.groups"
+			invoke "default.groups.cmd"
+			set {automatic.config} to true
+	if file "plugins\Skript\scripts\rCargosAPI.sk" exists:
+		send "&a[rCargos] Api Carregada com sucesso." to console
+	else:
+		download file from "https://raw.githubusercontent.com/ReFlexoo/rCargos/main/rCargosAPI.sk" to file "plugins\Skript\scripts\rCargosAPI.sk"
+		send "&e[rCargos] Api baixada com sucesso." to console
+		make console execute "sk reload rCargosAPI.sk"
+	send "&a[rCargos] version 1.0 developer ReFlexoo" to console
 
 command /groups [<text>] [<text>] [<text>] [<text>]:
 	trigger:
@@ -19,16 +33,18 @@ command /groups [<text>] [<text>] [<text>] [<text>]:
 				invoke "help.groups" from player
 				stop
 			if arg 1 is set:
-				if arg 1 is "criar":
+				if arg 1 is "criar" or "create":
 					if arg 2 is set:
 						if {group.criar.%arg 2%} is not set:
 							if arg 3 is set:
-								if arg 3 is "1" or "2" or "3" or "4" or "5" or "6" or "7" or "8" or "9" or "0":
+								if arg 3 contains "1" or "2" or "3" or "4" or "5" or "6" or "7" or "8" or "9" or "0":
 									if {id.criar.groups.%arg 3%} is not set:
 										set {group.criar.%arg 2%} to "%arg 2%"
-										set {id.criar.groups.%arg 2%} to "%arg 3%"
+										set {id.criar.groups.%arg 3%} to "%arg 3%"
+										add arg 2 to {prefix.groups.list::*}
 										add arg 2 to {groups.all::*}
-										send "&cVocê adicionou um grupo com sucesso!"
+										make console execute "/lp creategroup %arg 2%"
+										send "&aVocê adicionou um grupo com sucesso!"
 										stop
 									else:
 										send "&cErro! Já existe um grupo com esse id"
@@ -45,154 +61,125 @@ command /groups [<text>] [<text>] [<text>] [<text>]:
 					else:
 						send "&cErro! cite um grupo para ser adicionado em nosso sistema."
 						stop
-				if arg 1 is "delete":
+				if arg 1 is "delete" or "deletar":
 					if arg 2 is set:
 						if {group.criar.%arg 2%} is set:
 							if arg 3 is set:
 								if {id.criar.groups.%arg 3%} is set:
 									delete {group.criar.%arg 2%}
-									remove "%arg 2%" from {groups.all::*}
+									remove arg 2 from {groups.all::*}
+									remove arg 2 from {prefix.groups.list::*}
 									delete {id.criar.groups.%arg 3%}
-									send "&ccê removeu um grupo da lista de cargos"
+									make console execute "/lp deletegroup %arg 2%"
+									send "&cVocê removeu um grupo da lista de cargos"
 									stop
 								else:
-									send "Erro! não existe nenhum cargo com esse ID."
+									send "&cErro! não existe nenhum cargo com esse ID."
 									stop
 							else:
-								send "Erro! Cite um ID para ser deletado."
+								send "&cErro! Cite o ID do cargo."
 								stop
 						else:
-							send "Erro! esse grupo não foi adicionado em nosso sistema."
+							send "&cErro! esse grupo não foi adicionado em nosso sistema."
 							stop
 					else:
-						send "Erro! cite um grupo para remover da lista."
+						send "&cErro! cite um grupo para remover da lista."
 						stop
-				if arg 1 is "editar":
+				if arg 1 is "editar" or "edit":
 					if arg 2 is "permission":
 						if arg 3 is set:
-							if arg 3 is "{group.criar.%arg 2%}":
-								if arg 4 is "mcore" or "kcore" or "default":
-									set {group.config.%player%} to "%arg 3%"
-									set {config.pacote.permissions.%player%} to "%arg 4%"
-									make console execute "COMANDO PARA CRIAR CARGO"
-									send "&aAbrindo configurações..."
-									wait 2 seconds
-									invoke "config.permissions.pacotes" from player
+							if arg 4 is "mcore" or "kcore" or "default":
+								delete {group.config.%player%}
+								set {config.pacote.permissions.%player%} to "%arg 4%"
+								set {group.config.%player%} to "%arg 3%"
+								send "&aAbrindo configurações..."
+								wait 2 seconds
+								if arg 4 is "default":
+									invoke "permissions.default" from player
 									stop
-								else:
-									send "&cErro! Lista de permissões não encontrada."
+								if arg 4 is "mcore":
+									invoke "permissions.mcore" from player
+									stop
+								if arg 4 is "kcore":
+									invoke "permissions.kcore" from player
+									stop
 								stop
 							else:
-								send "&cErro! Você não citou um grupo valido."
-								stop
+								send "&cErro! Lista de permissões não encontrada."
+							stop
 						else:
 							send "&cErro! Você não citou nenhum grupo."
 							stop
+					if arg 2 is "tag":
+						if arg 3 is set:
+							if arg 4 is set:
+								if arg 4 contains "&":
+									delete {prefix.group.%arg 4%}
+									remove arg 3 from {prefix.groups.list::*}
+									add arg 4 to {prefix.groups.list::*}
+									set {prefix.group.%arg 4%} to "%arg 4%"
+									send "&aVocê alterou o prefix com sucesso!"
+									stop
+								else:
+									send "&cErro! Você não usou um prefix valido."
+									stop
+							else:
+								send "&cErro! Cite um prefix para ser adicionado."
+								stop
+						else:
+							send "&cErro! Cite um cargo para adicionar o prefix."
+							stop
 					else:
-						send "Erro! Comando invalido."
+						send "&cErro! Use: /groups editar [permission/tag] [Grupo] [Pacote]"
 						stop
-				if arg 1 is "list":
+				if arg 1 is "list" or "listar":
 					if amount of {groups.all::*} > 0:
-						send "&eForam encontrados: %amount of {groups.all::*}%"
+						send "&2&l• &aForam encontrados: &8%amount of {groups.all::*}%"
 						loop {groups.all::*}:
-							send "&f- &7%loop-value%"
+							send "&f- &7%loop-value-1%"
 					else:
 						send "&cNenhum cargo encontrado."
 						stop
+				if arg 1 is "clear" or "limpar":
+					invoke "clear.groups" from player
+					stop
+			else:
+				invoke "help.groups" from player
+				stop
+		else:
+			send "&cVocê não possui permissão para executar esse comando."
+			stop
+command /gwaihdf [<text>] [<text>] [<text>]:
+	trigger:
+		if arg 1 is not set:
+			send "&eProcurando grupos..."
+			loop {groups.all::*}:
+				delete {group.criar.%loop-value-1%}
+				loop {id.criar.groups::*}:
+					delete {id.criar.groups.%loop-value-2%}
+			clear {groups.all::*}
+			clear {prefix.groups.list::*}
+			add "default" to {groups.all::*}
+			wait 2 seconds
+			send "&aVocê apagou todos os grupos com sucesso!"
+			stop
+sub "clear.groups":
+	set {_p} to parameter 1
+	send "" to {_p}
+	send "&aVocê &aestá &aprestes &aa &alimpar &atodos &aos &agrupos &ajá &acriados." to {_p}
+	send json "&aClique " then "&e&lAQUI " run "/gwaihdf" then "&apara &aconfirmar &aestá &aação." to {_p}
+	send "" to {_p}
+	stop
 sub "help.groups":
 	set {_p} to parameter 1
 	send "" to {_p}
-	send "&eajuda 1/1" to {_p}
+	send "&2• &aAjuda &8[1/1]" to {_p}
 	send "" to {_p}
-	send "&a/groups criar [Grupo] [Id]" to {_p}
-	send "/groups delete [Grupo] [Id]" to {_p}
-	send "/groups editar permission [Grupo] [Pacote]" to {_p}
-	send "/groups list" to {_p}
-	send "" to {_p}
-	stop
-sub "Default.Groups":
-	set {_p} to parameter 1
-	add "master" to {groups.all::*}
-	add "gerente" to {groups.all::*}
-	add "admin" to {groups.all::*}
-	add "moderador" to {groups.all::*}
-	add "ajudante" to {groups.all::*}
-	add "mvpplus" to {groups.all::*}
-	add "mvp" to {groups.all::*}
-	add "vipplus" to {groups.all::*}
-	add "vip" to {groups.all::*}
-	stop
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# API
-sub "config.permissions.pacotes":
-	set {_p} to parameter 1
-	if {config.pacotes.permissions.%{_p}%} is "default":
-		invoke "permissions.default" from {_p}
-		stop
-	if {config.pacotes.permissions.%{_p}%} is "mcore":
-		invoke "permissions.mcore" from {_p}
-		stop
-	if {config.pacotes.permissions.%{_p}%} is "kcore":
-		invoke "permissions.kcore" from {_p}
-		stop
-	stop
-sub "permissions.kcore":
-	set {_p} to parameter 1
-	send "" to {_p}
-	send "&8Editando cargo: &2%{group.config.%{_p}%}%" to {_p}
-	send "" to {_p}
-	send json "&f- &akcore.cmd.fake" run "/hfiuawhbf kcore fake" to {_p}
-	send json "&f- &akcore.cmd.faker" run "/hfiuawhbf kcore faker" to {_p}
-	send json "&f- &akcore.admin" run "/hfiuawhbf kcore admin" to {_p}
-	send json "&f- &akcore.fly" run "/hfiuawhbf kcore fly" to {_p}
-	send json "&f- &akcore.fly" run "/hfiuawhbf kcore fly" to {_p}
-	send "" to {_p}
-	send json "&f- &aTodas as permissões" run "/hfiuawhbf kcore all" to {_p}
-	send "" to {_p}
-	send json "&aPaginas:" "1," run "/pagina2" "2," run "/pagina3" run "&73," to {_p}
+	send "&f- &2/groups criar &8[Grupo] [Id]" to {_p}
+	send "&f- &2/groups deletar &8[Grupo] [Id]" to {_p}
+	send "&f- &2/groups editar &8[Permission] [Grupo] [Pacote]" to {_p}
+	send "&f- &2/groups editar &8[Tag] [Grupo] [Prefix]" to {_p}
+	send "&f- &2/groups listar" to {_p}
+	send "&f- &2/groups limpar" to {_p}
 	send "" to {_p}
 	stop
-command /hfiuawhbf [<text>] [<text>]:
-	trigger:
-		if arg 1 is "kcore":
-			if arg 2 is "fly":
-				make console execute command "/lp group %{group.config.%player%}% permission set kcore.cmd.fly"
-				send "&aaVocê adicinou a permissão &2kcore.cmd.fly &acom sucesso!"
-				stop
-			if arg 2 is "fake":
-				make console execute command "/lp group %{group.config.%player%}% permission set kcore.cmd.fake"
-				send "&aaVocê adicinou a permissão &2kcore.cmd.fake &acom sucesso!"
-				stop
-			if arg 2 is "faker":
-				make console execute command "/lp group %{group.config.%player%}% permission set kcore.cmd.faker"
-				send "&aaVocê adicinou a permissão &2kcore.cmd.faker &acom sucesso!"
-				stop
-			if arg 2 is "admin":
-				make console execute command "/lp group %{group.config.%player%}% permission set kcore.cmd.admin"
-				send "&aaVocê adicinou a permissão &2kcore.cmd.admin &acom sucesso!"
-				stop
-			if arg 2 is "all":
-				make console execute command "/lp group %{group.config.%player%}% permission set kcore.cmd.fake"
-				make console execute command "/lp group %{group.config.%player%}% permission set kcore.cmd.faker"
-				make console execute command "/lp group %{group.config.%player%}% permission set kcore.cmd.admin"
-				make console execute command "/lp group %{group.config.%player%}% permission set kcore.cmd.fly"
-				send "&aTodas as permissões do kcore foram adicionadas com sucesso!"
-				stop
-
-	
