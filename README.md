@@ -1,6 +1,7 @@
 # rCargos
 
 Skript criado para ajudar a configurar o LuckPerms.
+Versão: 1.0
 
 **Comandos:**
 
