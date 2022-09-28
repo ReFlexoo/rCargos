@@ -1,6 +1,6 @@
-# Sistema de criar cargo por comando
-# Sistema de adicionar permissões por chat
-# Lista de permissões
+# rCargos criado e desenvolvido por ReFlexoo.
+# Version:
+# 1.1
 
 #Em caso de problemas acesse: https://discord.gg/eehY3dH5XU
 
@@ -24,8 +24,9 @@ on load:
 		download file from "https://raw.githubusercontent.com/ReFlexoo/rCargos/main/rCargosAPI.sk" to file "plugins\Skript\scripts\rCargosAPI.sk"
 		send "&e[rCargos] Api baixada com sucesso." to console
 		make console execute "sk reload rCargosAPI.sk"
-	send "&a[rCargos] version 1.0 developer ReFlexoo" to console
-
+	send "&a[rCargos] version 1.1 developer ReFlexoo" to console
+	set {rcargos.checkversion} to "## 1.1"
+	
 command /groups [<text>] [<text>] [<text>] [<text>]:
 	trigger:
 		if player has permission "groups.all":
@@ -143,6 +144,13 @@ command /groups [<text>] [<text>] [<text>] [<text>]:
 				if arg 1 is "clear" or "limpar":
 					invoke "clear.groups" from player
 					stop
+				if arg 1 is "atualizar":
+					if {update.rcargos} is true:
+						invoke "rcargos.automatic.update" from player
+						stop
+					else:
+						send "&cErro! Nenhuma atualização encontrada."
+						stop			
 			else:
 				invoke "help.groups" from player
 				stop
@@ -163,6 +171,16 @@ command /gwaihdf [<text>] [<text>] [<text>]:
 			wait 2 seconds
 			send "&aVocê apagou todos os grupos com sucesso!"
 			stop
+on join:
+	set {_version} to line 3 from url "https://raw.githubusercontent.com/ReFlexoo/rCargos/main/rCargos.sk"
+	if {_version} is not {rcargos.checkversion}:
+		set {update.rcargos} to true
+		wait 1 seconds
+		send ""
+		send "&8&l• &6&lATUALIZAÇÂO DISPONIVEL!"
+		send json "&aClique " then "&e&lAQUI " run "/groups atualizar" then "&apara baixar automaticamente a atualização." to player
+		send ""
+		stop
 sub "clear.groups":
 	set {_p} to parameter 1
 	send "" to {_p}
@@ -182,4 +200,12 @@ sub "help.groups":
 	send "&f- &2/groups listar" to {_p}
 	send "&f- &2/groups limpar" to {_p}
 	send "" to {_p}
+	stop
+sub "rcargos.automatic.update":
+	set {_p} to parameter 1
+	delete file "plugins\Skript\scripts\rCargos.sk"
+	download file from "https://raw.githubusercontent.com/ReFlexoo/rCargos/main/rCargos.sk" to file "plugins\Skript\scripts\rCargos.sk"
+	send "&aSkript atualizado com sucesso!" to {_p}
+	make console execute "sk reload rCargos.sk"
+	set {update.rcargos} to false
 	stop
