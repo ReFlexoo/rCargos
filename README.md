@@ -2,7 +2,7 @@
 
 Skript criado para ajudar a configurar o LuckPerms.
 
-Versão: 1.0
+Versão: 1.1
 
 **Comandos:**
 
