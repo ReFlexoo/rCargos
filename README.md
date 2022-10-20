@@ -23,6 +23,14 @@ Versão: 1.2
 
 - Usando `/groups deletar Master 1` você vai deletar automaticamente o cargo citado no luckperms e removendo ele da lista de cargos no skript.
 
+**Comando /groups adicionar:**
+
+- Usando `/groups adicionar permission Master role.master` você vai adicionar a permissão role.master no cargo master.
+
+**Comando /groups remover:**
+
+- Usando `/groups remover permission Master role.master` você vai remover a permissão role.master do cargo master.
+
 **Comando /groups editar:**
 
 - Usando `/groups editar permission Master mCore` Ele vai te dar uma lista de todas as permissões do mcore para você poder adicionar.
