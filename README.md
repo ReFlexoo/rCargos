@@ -2,12 +2,14 @@
 
 Skript criado para ajudar a configurar o LuckPerms.
 
-Versão: 1.1
+Versão: 1.2
 
 **Comandos:**
 
 - /groups criar [Grupo] [ID]
 - /groups deletar [Grupo] [ID]
+- /groups adicionar permission [Grupo] [Permissão]
+- /groups remover permission [Grupo] [Permissão]
 - /groups editar [Permission] [Grupo] [Pacote]
 - /groups editar [Tag] [Grupo] [Prefix]
 - /groups listar
