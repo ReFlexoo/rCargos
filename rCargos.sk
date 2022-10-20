@@ -1,6 +1,6 @@
 # rCargos criado e desenvolvido por ReFlexoo.
 # Version:
-# 1.1
+# 1.2
 
 #Em caso de problemas acesse: https://discord.gg/eehY3dH5XU
 
@@ -24,8 +24,8 @@ on load:
 		download file from "https://raw.githubusercontent.com/ReFlexoo/rCargos/main/rCargosAPI.sk" to file "plugins\Skript\scripts\rCargosAPI.sk"
 		send "&e[rCargos] Api baixada com sucesso." to console
 		make console execute "sk reload rCargosAPI.sk"
-	send "&a[rCargos] version 1.1 developer ReFlexoo" to console
-	set {rcargos.checkversion} to "## 1.1"
+	send "&a[rCargos] version 1.2 developer ReFlexoo" to console
+	set {rcargos.checkversion} to "## 1.2"
 	
 command /groups [<text>] [<text>] [<text>] [<text>]:
 	trigger:
@@ -34,6 +34,66 @@ command /groups [<text>] [<text>] [<text>] [<text>]:
 				invoke "help.groups" from player
 				stop
 			if arg 1 is set:
+				if arg 1 is "adicionar" or "add":
+					if arg 2 is "permission":
+						if arg 3 is set:
+							if arg 4 is set:
+								if {group.criar.%arg 4%} is set:
+									send "&aPermissão adicionada com sucesso!"
+									make console execute command "/lp group %arg 4% permission add %arg 3%"
+									stop
+								else:
+									send "&cErro! Não existe um grupo com esse nome."
+									stop
+							else:
+								send "&cErro! Cite um grupo valido."
+								stop
+						else:
+							send "&cErro! Cite uma permissão para ser adicionada."
+							stop
+					else:
+						send "&cErro! Use: /groups add permission [permission] [grupo]"
+						stop
+				if arg 1 is "remove" or "remover":
+					if arg 2 is "permission":
+						if arg 3 is set:
+							if arg 4 is set:
+								if {group.criar.%arg 4%} is set:
+									send "&cPermissão foi removida"
+									make console execute command "/lp group %arg 4% permission remove %arg 3%"
+									stop
+								else:
+									send "&cErro! Não existe um grupo com esse nome."
+									stop
+							else:
+								send "&cErro! Cite um grupo valido."
+								stop
+						else:
+							send "&cErro! Cite uma permissão para ser removida."
+							stop
+					else:
+						send "&cErro! Use: /groups remove permission [permission] [grupo]"
+						stop
+				if arg 1 is "remove" or "remover":
+					if arg 2 is "permission":
+						if arg 3 is set:
+							if arg 4 is set:
+								if {group.criar.%arg 4%} is set:
+									send "&cPermissão foi removida"
+									make console execute command "/lp group %arg 4% permission remove %arg 3%"
+									stop
+								else:
+									send "&cErro! Não existe um grupo com esse nome."
+									stop
+							else:
+								send "&cErro! Cite um grupo valido."
+								stop
+						else:
+							send "&cErro! Cite uma permissão para ser removida."
+							stop
+					else:
+						send "&cErro! Use: /groups remove permission [permission] [grupo]"
+						stop
 				if arg 1 is "criar" or "create":
 					if arg 2 is set:
 						if {group.criar.%arg 2%} is not set:
@@ -172,15 +232,16 @@ command /gwaihdf [<text>] [<text>] [<text>]:
 			send "&aVocê apagou todos os grupos com sucesso!"
 			stop
 on join:
-	set {_version} to line 3 from url "https://raw.githubusercontent.com/ReFlexoo/rCargos/main/rCargos.sk"
-	if {_version} is not {rcargos.checkversion}:
-		set {update.rcargos} to true
-		wait 1 seconds
-		send ""
-		send "&8&l• &6&lATUALIZAÇÂO DISPONIVEL!"
-		send json "&aClique " then "&e&lAQUI " run "/groups atualizar" then "&apara baixar automaticamente a atualização." to player
-		send ""
-		stop
+	if player has permission "rcargos.all":
+		set {_version} to line 3 from url "https://raw.githubusercontent.com/ReFlexoo/rCargos/main/rCargos.sk"
+		if {_version} is not {rcargos.checkversion}:
+			set {update.rcargos} to true
+			wait 1 seconds
+			send ""
+			send "&8&l• &6&lATUALIZAÇÂO DISPONIVEL!"
+			send json "&aClique " then "&e&lAQUI " run "/groups atualizar" then "&apara baixar automaticamente a atualização." to player
+			send ""
+			stop
 sub "clear.groups":
 	set {_p} to parameter 1
 	send "" to {_p}
@@ -204,8 +265,11 @@ sub "help.groups":
 sub "rcargos.automatic.update":
 	set {_p} to parameter 1
 	delete file "plugins\Skript\scripts\rCargos.sk"
+	delete file "plugins\Skript\scripts\rCargosAPI.sk"
 	download file from "https://raw.githubusercontent.com/ReFlexoo/rCargos/main/rCargos.sk" to file "plugins\Skript\scripts\rCargos.sk"
+	download file from "https://raw.githubusercontent.com/ReFlexoo/rCargos/main/rCargosAPI.sk" to file "plugins\Skript\scripts\rCargosAPI.sk"
 	send "&aSkript atualizado com sucesso!" to {_p}
 	make console execute "sk reload rCargos.sk"
+	make console execute "sk reload rCargosAPI.sk"
 	set {update.rcargos} to false
 	stop
